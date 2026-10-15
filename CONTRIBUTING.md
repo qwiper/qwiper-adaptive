@@ -49,6 +49,17 @@ source-text fragments when executable behavior can be tested.
 Use dartdoc for public API. Changes to default thresholds or interpretation of
 unknown values are externally observable and must be described in the changelog.
 
+## Pull requests
+
+- Create a dedicated branch from the default branch for each change.
+- Keep each pull request focused on a single topic; separate refactors from
+  behavior changes.
+- Run the local checks above before opening the pull request and mention any
+  check you could not run (for example, missing Android SDK or device).
+- Describe what changed and why, and link the related issue when one exists.
+- Update tests, dartdoc and the changelog when the change is externally
+  observable.
+
 ## Before public release
 
 - Run CI from a fresh checkout and review its actual results.
