@@ -1,0 +1,18 @@
+Qwiper Adaptive
+Copyright (c) 2026 Qwiper contributors
+
+Authors:
+Issoufa ABDOU OUSMANE
+Abdoul Matinou MAMANE AMADOU
+Abdoul Kader BACHIR OUSSEINI
+
+The initial resource thresholds and budgets are derived from the Qwiper
+application. They are configurable heuristics, not benchmark findings.
+The package is an independent extraction; no private application history
+or business services are included.
+
+Flutter and Dart are upstream dependencies. The example's platform scaffolding
+was generated with the Flutter SDK. Upstream dependencies retain their own
+licenses. The library has no runtime dependency beyond the Flutter SDK. The example
+additionally includes cupertino_icons for Flutter platform-adaptive glyphs;
+its license remains applicable.

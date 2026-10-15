@@ -1,0 +1,23 @@
+name: qwiper_adaptive
+description: Explicit, configurable resource policies and adaptive effects for Flutter, with an optional Android resource probe.
+version: 0.1.0
+
+environment:
+  sdk: '>=3.12.0 <4.0.0'
+  flutter: '>=3.44.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  plugin:
+    platforms:
+      android:
+        package: com.qwiper.qwiper_adaptive
+        pluginClass: QwiperAdaptivePlugin
