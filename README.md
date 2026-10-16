@@ -160,9 +160,9 @@ The demo labels synthetic profiles and actual probe outcomes separately. Only it
 
 ## Authors
 
-- Issoufa ABDOU OUSMANE
-- Abdoul Matinou MAMANE AMADOU
-- Abdoul Kader BACHIR OUSSEINI
+- [Issoufa ABDOU OUSMANE](https://github.com/issoufaao)
+- [Abdoul Matinou MAMANE AMADOU](https://github.com/AbdoulMatinou)
+- [Abdoul Kader BACHIR OUSSEINI](https://github.com/DERKARIOM)
 
 ## Documentation and provenance
 
