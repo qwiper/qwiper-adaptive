@@ -60,6 +60,14 @@ flutter test integration_test/plugin_integration_test.dart -d <android-device-id
 
 Record the OS/API, device and actual results before release. Test representative constrained devices as well as higher-capacity hardware. A successful compile is not evidence of an operational native probe or of a performance improvement.
 
+## Publication preparation checks (2026-10-16)
+
+- `flutter analyze --no-pub --fatal-infos`: passed with no issues.
+- `dart pub publish --dry-run`: passed with zero warnings; the 153 KB archive was reviewed.
+- The paper remains 8 pages; updated pages 1 and 7 were rendered and inspected.
+- GitHub private vulnerability reporting is enabled and linked from `SECURITY.md`.
+- The Dart, Kotlin, Gradle and test sources match the successful CI commit above.
+
 ## Publication status
 
 The public source repository is https://github.com/qwiper/qwiper-adaptive. Its URL and issue tracker are configured in `pubspec.yaml`. Release preparation targets `qwiper_adaptive` 0.1.0 on pub.dev; the registry page is the authoritative publication status. Keep the device and benchmark limitations above visible until they have been replaced by recorded execution evidence.
