@@ -14,7 +14,7 @@ Note d'architecture et de validation · Version 0.1.0 · 15 octobre 2026
 
 Une application Flutter peut s'exécuter sur des appareils dont la mémoire et le stockage disponibles diffèrent fortement. Qwiper Adaptive sépare trois responsabilités : acquérir un instantané partiel, calculer une politique déterministe, puis laisser l'application appliquer ses décisions. Une sonde Android relève cinq signaux ; un moteur Dart produit un niveau de ressources, des budgets configurables et une raison de classification. Un adaptateur Flutter peut désactiver le flou d'arrière-plan sans réinitialiser l'état de ses descendants. Les données absentes restent inconnues et les limites de cache ne sont jamais présentées comme des réservations de mémoire.
 
-Cette note spécifie les contrats de la version 0.1.0, explique les choix de conception et distingue les tests exécutés des évaluations encore nécessaires. Les tests Dart, navigateur et AOT vérifient des comportements ; la compilation et l'exécution natives Android ne sont pas encore validées. Aucun gain de performance n'est établi par cette implémentation.
+Cette note spécifie les contrats de la version 0.1.0, explique les choix de conception et distingue les tests exécutés des évaluations encore nécessaires. Les tests Dart, navigateur et AOT vérifient des comportements ; la compilation Android et les 12 tests Kotlin passent en CI. L'intégration sur appareil reste à valider. Aucun gain de performance n'est établi par cette implémentation.
 
 ### 1. Problème et périmètre
 
@@ -179,20 +179,20 @@ Les animations et préférences d'accessibilité restent à traiter dans l'appli
 
 # 7. Validation et évaluation expérimentale
 
-### Résultats locaux de la version 0.1.0
+### Résultats de validation de la version 0.1.0
 
-Environnement : Flutter 3.44.0, Dart 3.12.0, macOS 26.4.1 et Chrome headless. Les commandes et limites sont conservées dans le [bilan de validation](../VALIDATION.md). Les exécutions VM et Chrome reprennent en grande partie les mêmes cas ; leurs nombres ne s'additionnent pas en autant de tests indépendants.
+Environnements : Flutter 3.44.0, Dart 3.12.0 ; macOS 26.4.1 localement, Ubuntu en CI et Chrome headless. Les commandes et limites sont conservées dans le [bilan de validation](../VALIDATION.md). Les exécutions VM et Chrome reprennent en grande partie les mêmes cas ; leurs nombres ne s'additionnent pas en autant de tests indépendants.
 
-| Vérification | Résultat local | Portée |
+| Vérification | Résultat | Portée |
 | --- | --- | --- |
 | Bibliothèque sur VM Dart | 78 réussis, 2 cas Web ignorés | Politique, erreurs, widgets et cache explicite. |
 | Bibliothèque dans Chrome | 79 réussis, 1 cas natif ignoré | Même contrat et particularités numériques JavaScript. |
 | Programme compilé AOT | 26 vérifications réussies | Validations d'entrée actives sans assertions. |
 | Démonstration sur VM et Chrome | 7 tests réussis par environnement | Profils, mise en page, attente, échec et nouvelle tentative. |
 | Analyse et compilation Web | Réussies | Analyse statique et production du build ; pas mesure de fluidité. |
-| Android natif | Non exécuté | APK, 12 tests Kotlin et intégration sur appareil restent à qualifier. |
+| Android en CI | APK compilé, 12 tests Kotlin réussis | Tests JVM avec mocks ; intégration sur appareil non exécutée. |
 
-Ces résultats portent sur les cas testés. Ils n'établissent ni absence universelle de défaut, ni compatibilité native Android, ni amélioration de performance. Le SDK Android manque dans l'environnement de validation ; les mocks du canal ne le remplacent pas.
+La CI du 15 octobre 2026 est référencée dans le bilan de validation. Ces résultats n'établissent ni absence universelle de défaut, ni bon fonctionnement sur tout appareil, ni amélioration de performance. Les tests JVM ne remplacent pas l'exécution des API Android sur appareil.
 
 ### Protocole proposé, non encore exécuté
 

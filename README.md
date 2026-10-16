@@ -4,7 +4,7 @@ Explicit resource policies and adaptive effects for Flutter.
 
 Qwiper Adaptive turns an optional device-resource snapshot into configurable cache and media budgets. It includes a small Android probe and a backdrop widget that disables its effect on constrained profiles while preserving its child's state. The application decides when to read resources and which budgets to apply.
 
-**Status:** version 0.1.0, prepared locally for review. This repository has not been published to pub.dev by this work. Default thresholds are heuristics extracted from Qwiper, not benchmark results or a universal performance classification. See [validation](VALIDATION.md) for what was actually checked.
+**Status:** version 0.1.0, initial release. Default thresholds are heuristics extracted from Qwiper, not benchmark results or a universal performance classification. See [validation](VALIDATION.md) for what was actually checked.
 
 ## What is included
 
@@ -30,15 +30,21 @@ Tested toolchain: Flutter 3.44.0 and Dart 3.12.0. These are the declared minimum
 
 Cross-platform policy support does not imply native hardware detection on every platform. The web demo exercises the conservative fallback. Consult the validation record for platforms actually compiled or executed.
 
-## Local installation
+## Installation
+
+```sh
+flutter pub add qwiper_adaptive
+```
+
+Or add the dependency directly:
 
 ```yaml
 dependencies:
-  qwiper_adaptive:
-    path: ../qwiper-adaptive
+  qwiper_adaptive: ^0.1.0
 ```
 
-Adjust the path to this repository. No service account or Qwiper backend is needed.
+No service account or Qwiper backend is needed. For local development, use a
+path dependency pointing to your checkout instead.
 
 ## Read, decide, apply
 
