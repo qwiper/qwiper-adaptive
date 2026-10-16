@@ -1,6 +1,13 @@
 name: qwiper_adaptive
 description: Explicit, configurable resource policies and adaptive effects for Flutter, with an optional Android resource probe.
 version: 0.1.0
+repository: https://github.com/qwiper/qwiper-adaptive
+issue_tracker: https://github.com/qwiper/qwiper-adaptive/issues
+topics:
+  - flutter
+  - adaptive-ui
+  - performance
+  - resource-management
 
 environment:
   sdk: '>=3.12.0 <4.0.0'
